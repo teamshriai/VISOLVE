@@ -1,0 +1,13 @@
+.ai-portfolio-fixed-badge {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+}
+
+@media (max-width: 640px) {
+  .ai-portfolio-fixed-badge {
+    bottom: 16px;
+    right: 16px;
+  }
+}

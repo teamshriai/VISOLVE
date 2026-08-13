@@ -1,0 +1,643 @@
+@import "tailwindcss";
+
+/* ============================================================
+   VISOLVE GLOBAL DESIGN SYSTEM — 2026
+   Theme: Black + White + Dark Navy Blue + Orange
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* ── Primary Black Base ── */
+    --primary-black:   #0B0F14;   /* Pure/Deep Black Footer Background */
+
+    /* ── 6 Visibly Differentiated Blue Shades (White-First Architecture) ── */
+    --blue-deep:       #08243F;   /* Deep Navy — Navbar, H1 titles, brand anchor */
+    --blue-midnight:   #0D3557;   /* Midnight Blue — H2 titles, primary section headers */
+    --blue-corporate:  #155A8A;   /* Corporate Blue — Service titles, links, active UI */
+    --blue-medium:     #2878A8;   /* Medium Blue — Icons, interactive arrows, highlights */
+    --blue-slate:      #55758C;   /* Slate Blue — Paragraph descriptions, numbers, breadcrumbs */
+    --blue-soft:       #EAF3F8;   /* Soft Blue — Micro icon containers & subtle background tints */
+
+    --primary-blue:        #08243F;
+    --primary-blue-mid:    #0D3557;
+    --primary-blue-light:  #155A8A;
+    /* ── 5-Shade Coordinated Orange Accent System (Minimal ~2% Usage) ── */
+    --orange-warm:   #F97316;   /* Bright Warm Orange — Primary Portfolio CTA & Navy Contrast Accents */
+    --orange-amber:  #F59E0B;   /* Amber Orange — Secondary icons, badges & indicators */
+    --orange-burnt:  #EA580C;   /* Burnt Orange — Primary Hover, active borders & migration icons */
+    --orange-deep:   #C2410C;   /* Deep Orange — Security icons, dark section highlights & active links */
+    --orange-soft:   #FDBA74;   /* Soft Peach — Subtle micro-tints (bg-[#FFF7ED] / border-[#FDBA74]/40) */
+    
+    --accent-orange:       #F97316;
+    --accent-orange-hover: #EA580C;
+    --accent-orange-light: #FFF7ED;
+
+    /* ── Surface / Background ── */
+    --bg-page:         #FFFFFF;
+    --bg-light:        #F5F7FA;
+    --bg-card:         #FFFFFF;
+    --bg-section-alt:  #F0F4F8;
+    --bg-dark:         #0B0F14;
+
+    /* ── Text ── */
+    --text-heading:    #0B0F14;
+    --text-primary:    #1C2733;
+    --text-secondary:  #4A5568;
+    --text-muted:      #718096;
+    --text-white:      #FFFFFF;
+
+    /* ── Border ── */
+    --border-color:    #D9E0E7;
+    --border-subtle:   #EDF0F3;
+
+    /* ── Typography ── */
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                 Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+    /* ── Shadow ── */
+    --shadow-sm:  0 1px 3px 0 rgba(11,15,20,0.08), 0 1px 2px -1px rgba(11,15,20,0.05);
+    --shadow-md:  0 4px 12px -2px rgba(11,42,74,0.12), 0 2px 4px -2px rgba(11,15,20,0.06);
+    --shadow-lg:  0 10px 30px -5px rgba(11,42,74,0.18), 0 4px 8px -3px rgba(11,15,20,0.08);
+    /* ── Motion System ── */
+    --motion-fast:    180ms;
+    --motion-normal:  250ms;
+    --motion-smooth:  350ms;
+    --motion-reveal:  500ms;
+    --motion-easing:  cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* ── Base Reset ── */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Typography Hierarchy ── */
+  h1 {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--text-heading);
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text-heading);
+  }
+  h3 {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    color: var(--text-heading);
+  }
+  h4 {
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-heading);
+  }
+  h5 {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--text-heading);
+  }
+  h6 {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+  }
+  a {
+    color: var(--primary-blue-light);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  a:hover {
+    color: var(--accent-orange);
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── Layout ── */
+  main, .main-content {
+    flex: 1;
+    overflow-x: hidden;
+  }
+}
+
+/* ============================================================
+   PAGE HERO — standard dark-navy banner used across all pages
+   ============================================================ */
+.page-hero {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-mid) 100%);
+  color: var(--text-white);
+  padding: 3rem 1.5rem;
+}
+.page-hero h1,
+.page-hero h2,
+.page-hero h3,
+.page-hero h4,
+.page-hero h5,
+.page-hero h6,
+.bg-\[\#0B2A4A\] h1,
+.bg-\[\#0B2A4A\] h2,
+.bg-\[\#0B2A4A\] h3,
+.bg-\[\#0B2A4A\] h4,
+.bg-\[\#0B2A4A\] h5,
+.bg-\[\#0B2A4A\] h6,
+.bg-black h1,
+.bg-black h2,
+.bg-black h3,
+.bg-slate-900 h1,
+.bg-slate-900 h2 {
+  color: #FFFFFF !important;
+}
+.page-hero p,
+.bg-\[\#0B2A4A\] p {
+  color: rgba(255,255,255,0.85);
+}
+
+.page-hero-sm {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-mid) 100%);
+  color: var(--text-white);
+  padding: 2rem 1.5rem;
+}
+.page-hero-sm h1,
+.page-hero-sm h2,
+.page-hero-sm h3 {
+  color: #FFFFFF !important;
+}
+
+/* Orange accent bar that can sit above hero headings */
+.hero-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.breadcrumb {
+  background-color: var(--bg-light);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.625rem 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+.breadcrumb a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  color: var(--accent-orange);
+}
+
+/* ============================================================
+   CARD UTILITIES
+   ============================================================ */
+.visolve-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.625rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+.visolve-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #a9c2da;
+  transform: translateY(-2px);
+}
+
+/* Feature card with left-border accent */
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.625rem;
+  padding: 1.25rem 1.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--primary-blue);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.feature-card:hover::before { opacity: 1; }
+.feature-card:hover {
+  border-color: #a9c2da;
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   BUTTON UTILITIES
+   ============================================================ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--primary-blue);
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: var(--primary-blue-mid);
+  color: var(--text-white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px -2px rgba(11,42,74,0.4);
+}
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--accent-orange);
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+}
+.btn-accent:hover {
+  background-color: var(--accent-orange-hover);
+  color: var(--text-white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px -2px rgba(242,140,40,0.4);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: transparent;
+  color: var(--primary-blue);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.55rem 1.35rem;
+  border-radius: 0.4rem;
+  border: 1.5px solid var(--primary-blue);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  background-color: var(--primary-blue);
+  color: var(--text-white);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   SIDEBAR UTILITY — Service Pages
+   ============================================================ */
+.sidebar-nav {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.625rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.sidebar-nav-title {
+  background: var(--primary-blue);
+  color: var(--text-white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+}
+.sidebar-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.sidebar-nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.15s ease;
+  border-left: 3px solid transparent;
+}
+.sidebar-nav ul li a:hover {
+  color: var(--accent-orange);
+  background-color: var(--accent-orange-light);
+  border-left-color: var(--accent-orange);
+  padding-left: 1.25rem;
+}
+.sidebar-nav ul li a.active {
+  color: var(--primary-blue);
+  background-color: #e8f0f8;
+  border-left-color: var(--primary-blue);
+  font-weight: 600;
+}
+
+/* ============================================================
+   TABLE UTILITY — Responsive
+   ============================================================ */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+.table-responsive table {
+  width: 100%;
+  min-width: 540px;
+  border-collapse: collapse;
+  text-align: left;
+}
+.table-responsive th {
+  background-color: var(--primary-blue);
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  padding: 0.75rem 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.table-responsive td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+.table-responsive tr:last-child td { border-bottom: none; }
+.table-responsive tr:nth-child(even) { background-color: var(--bg-light); }
+.table-responsive tr:hover td { background-color: #e8f0f8; }
+
+/* ============================================================
+   CTA SECTION
+   ============================================================ */
+.cta-section {
+  background: linear-gradient(135deg, #e8f0f8 0%, #dce8f4 100%);
+  border: 1px solid #c0d5e8;
+  border-radius: 0.625rem;
+  padding: 2rem;
+}
+
+/* ============================================================
+   SECTION LABEL
+   ============================================================ */
+.section-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   DOWNLOAD / PDF LINK
+   ============================================================ */
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary-blue-light);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.375rem;
+  border: 1px solid #a9c2da;
+  background: #eef4fb;
+  transition: all 0.15s ease;
+}
+.download-link:hover {
+  background: var(--primary-blue);
+  color: var(--text-white);
+  border-color: var(--primary-blue);
+}
+
+/* ============================================================
+   RESPONSIVE IMAGE CONTAINERS
+   ============================================================ */
+.img-responsive {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+.img-card {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.img-card img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ============================================================
+   SCROLLBAR REFINEMENT
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-light); }
+::-webkit-scrollbar-thumb { background: #b0bec5; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #78909c; }
+
+/* ============================================================
+   FOCUS ACCESSIBILITY
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--accent-orange);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   NAVBAR OVERRIDES — ensure no white bleeds through
+   ============================================================ */
+.visolve-navbar {
+  background-color: var(--primary-blue) !important;
+}
+
+/* ============================================================
+   UTILITY — Section Orange Accent Line
+   ============================================================ */
+.section-accent-line {
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: var(--accent-orange);
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   MOTION SYSTEM — ViSolve 2026
+   Utilities for section reveal, card hover, image zoom,
+   button lift, and link transitions.
+   ============================================================ */
+
+/* ── Section Reveal (IntersectionObserver driven) ── */
+.v-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--motion-reveal) var(--motion-easing),
+    transform var(--motion-reveal) var(--motion-easing);
+  will-change: opacity, transform;
+}
+.v-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger helpers — applied alongside .v-reveal on children */
+.v-stagger-1 { transition-delay: 0ms; }
+.v-stagger-2 { transition-delay: 70ms; }
+.v-stagger-3 { transition-delay: 140ms; }
+.v-stagger-4 { transition-delay: 210ms; }
+.v-stagger-5 { transition-delay: 280ms; }
+.v-stagger-6 { transition-delay: 350ms; }
+.v-stagger-7 { transition-delay: 420ms; }
+.v-stagger-8 { transition-delay: 490ms; }
+
+/* ── Card hover — lift + subtle shadow ── */
+.v-card-hover {
+  transition:
+    transform var(--motion-normal) var(--motion-easing),
+    box-shadow var(--motion-normal) var(--motion-easing),
+    border-color var(--motion-normal) var(--motion-easing);
+  will-change: transform, box-shadow;
+}
+.v-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px -4px rgba(8,36,63,0.12), 0 2px 6px -2px rgba(8,36,63,0.06);
+}
+
+/* ── Image zoom inside overflow-hidden container ── */
+.v-img-zoom {
+  transition: transform var(--motion-smooth) var(--motion-easing);
+  will-change: transform;
+}
+.v-img-zoom:hover {
+  transform: scale(1.025);
+}
+
+/* ── Button lift with active press ── */
+.v-btn {
+  transition:
+    background-color var(--motion-fast) var(--motion-easing),
+    color var(--motion-fast) var(--motion-easing),
+    transform var(--motion-fast) var(--motion-easing),
+    box-shadow var(--motion-fast) var(--motion-easing);
+}
+.v-btn:hover  { transform: translateY(-1px); }
+.v-btn:active { transform: scale(0.98); }
+
+/* ── Link smooth color ── */
+.v-link {
+  transition: color var(--motion-fast) var(--motion-easing);
+}
+
+/* ── Icon subtle shift on group hover ── */
+.v-icon-shift {
+  transition: transform var(--motion-fast) var(--motion-easing);
+}
+.group:hover .v-icon-shift {
+  transform: translateX(2px) translateY(-2px);
+}
+
+/* ── Form focus ring ── */
+.v-input {
+  transition:
+    border-color var(--motion-fast) var(--motion-easing),
+    box-shadow var(--motion-fast) var(--motion-easing);
+}
+.v-input:focus {
+  border-color: #2878A8;
+  box-shadow: 0 0 0 3px rgba(40,120,168,0.15);
+  outline: none;
+}
+
+/* ── Footer link hover ── */
+footer a {
+  transition: color var(--motion-fast) var(--motion-easing);
+}
+
+/* ── Reduced motion — disable all transforms/opacity transitions ── */
+@media (prefers-reduced-motion: reduce) {
+  .v-reveal,
+  .v-card-hover,
+  .v-img-zoom,
+  .v-btn,
+  .v-link,
+  .v-icon-shift,
+  .v-input {
+    transition: none !important;
+    transform: none !important;
+  }
+  .v-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
