@@ -111,7 +111,7 @@ function AIHealthcareSolutions() {
               rel="noopener noreferrer"
               className="px-6 py-3 bg-white border border-[#08243F] text-[#08243F] hover:bg-[#EAF3F8]/50 font-semibold rounded-lg transition-colors inline-flex items-center gap-2 text-sm sm:text-base"
             >
-              <span>Explore the AI portfolio</span>
+              <span>Explore the AI Healthcare Solutions</span>
               <FiArrowUpRight strokeWidth={1.5} />
             </a>
           </div>
