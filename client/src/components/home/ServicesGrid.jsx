@@ -5,7 +5,6 @@ import {
   FiRefreshCw,
   FiCloud,
   FiLayout,
-  FiCheckCircle,
   FiCode,
   FiMonitor,
   FiChevronRight
@@ -47,19 +46,11 @@ const services = [
   },
   {
     id: 5,
-    title: "Product / Development Solutions",
+    title: "Product Development / Solutions",
     description:
       "Product engineering, platform and backend work, and sustained development capacity for your roadmap.",
     link: "/services/product-development",
     icon: FiLayout,
-  },
-  {
-    id: 6,
-    title: "Product / Solution QA",
-    description:
-      "Comprehensive software QA and certification, covering functional, performance and release validation.",
-    link: "/services/qa-certification",
-    icon: FiCheckCircle,
   },
   {
     id: 7,
