@@ -5,7 +5,6 @@ const subNavLinks = [
   { label: "RCM", to: "/services/medicalbilling" },
   { label: "Patient Portal", to: "/services/patientportal" },
   { label: "OpenEMR Pro", to: "/services/openemr-pro" },
-  { label: "2FA", to: "/services/openemr-pro/2fa" },
   { label: "Scheduler Pro", to: "/services/openemr-pro/scheduler" },
   { label: "Google Calendar", to: "/services/openemr-pro/googlecalendar" },
   { label: "Customization", to: "/services/customization" },

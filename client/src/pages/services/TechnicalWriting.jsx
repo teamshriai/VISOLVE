@@ -174,7 +174,6 @@ function TechnicalWriting() {
                 <li><Link to="/services/technical-writing" className="font-bold text-[#f16d05]">Technical Writing Services</Link></li>
                 <li><Link to="/services/virtualization" className="hover:text-[#f16d05]">Virtualization Services</Link></li>
                 <li><Link to="/services/opensource" className="hover:text-[#f16d05]">OpenSource Services</Link></li>
-                <li><Link to="/services/security" className="hover:text-[#f16d05]">Enterprise Security</Link></li>
                 <li><Link to="/services/demo-portals" className="hover:text-[#f16d05]">Solutions Demo Portals</Link></li>
                 <li><Link to="/services/iot" className="hover:text-[#f16d05]">Internet of Things (IoT)</Link></li>
                 <li><Link to="/services/database" className="hover:text-[#f16d05]">Database Services</Link></li>

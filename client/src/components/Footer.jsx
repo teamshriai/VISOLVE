@@ -98,7 +98,6 @@ function Footer() {
               <li><FLink to="/services/cloud">Cloud Services</FLink></li>
               <li><FLink to="/services/virtualization">Virtualization Services</FLink></li>
               <li><FLink to="/services/opensource">Open Source Services</FLink></li>
-              <li><FLink to="/services/security">Enterprise Security</FLink></li>
               <li><FLink to="/services/performance-tools">Performance Tools</FLink></li>
               <li><FLink to="/services/qa-certification">Product / Solution QA</FLink></li>
               <li><FLink to="/services/demo-portals">Solutions Demo Portals</FLink></li>

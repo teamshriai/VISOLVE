@@ -23,11 +23,11 @@ const CloseIcon = () => (
 
 /* ── Menu data ── */
 const SERVICES_ENTERPRISE = [
+  ["Product / Development Solutions", "/services/product-development"],
   ["Migration Service",             "/services/migration"],
   ["Cloud Services",                "/services/cloud"],
   ["Virtualization Services",       "/services/virtualization"],
   ["OpenSource Services",           "/services/opensource"],
-  ["Enterprise Security (2FA/SSO)", "/services/security"],
   ["Performance Tools",             "/services/performance-tools"],
   ["Product / Solution QA",         "/services/qa-certification"],
   ["Solution Demo Portals",         "/services/demo-portals"],
@@ -36,6 +36,7 @@ const SERVICES_ENTERPRISE = [
 ];
 
 const SERVICES_HEALTHCARE = [
+  ["AI Healthcare Solutions",  "/services/ai-healthcare"],
   ["OpenEMR Customization",    "/services/openemr"],
   ["Interoperability Services","/services/interoperability"],
   ["Cloud Hosting",            "/smart-aws-contents"],
@@ -51,9 +52,6 @@ const PRODUCTS = [
   ["OpenEMR Pro",                   "/services/openemr-pro"],
   ["Patient Portal",                "/services/patientportal"],
   ["Medical Billing (RCM)",         "/services/medicalbilling"],
-  ["Pluggable Billing (PBM)",       "/products/pbm"],
-  ["ViCache Filter",                "/products/vicache-filter"],
-  ["2FA",                           "/services/openemr-pro/2fa"],
   ["Google Calendar Integration",   "/services/openemr-pro/googlecalendar"],
   ["Scheduler Pro",                 "/services/openemr-pro/scheduler"],
   ["e-Prescription",                "/services/openemr-pro/eprescription"],
@@ -214,7 +212,7 @@ function Navbar() {
         </Link>
 
         {/* ── Desktop Nav ── */}
-        <nav className="hidden md:flex items-center gap-0.5 lg:gap-1">
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
           <NavLink to="/" end className={({ isActive }) => desktopLinkClass(isActive)}>
             Home
           </NavLink>
@@ -251,6 +249,10 @@ function Navbar() {
               </DropdownPanel>
             )}
           </div>
+
+          <NavLink to="/portfolio" className={({ isActive }) => desktopLinkClass(isActive)}>
+            AI Portfolio
+          </NavLink>
 
           {/* Resources */}
           <div
@@ -304,7 +306,7 @@ function Navbar() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation menu"
-          className="md:hidden p-2 rounded text-white/80 hover:bg-white/10 transition-colors"
+          className="lg:hidden p-2 rounded text-white/80 hover:bg-white/10 transition-colors"
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
@@ -313,7 +315,7 @@ function Navbar() {
       {/* ── Mobile Drawer ── */}
       {mobileOpen && (
         <div
-          className="md:hidden overflow-y-auto max-h-[80vh] border-t border-white/10"
+          className="lg:hidden overflow-y-auto max-h-[80vh] border-t border-white/10"
           style={{ background: "var(--primary-blue)" }}
         >
           {/* Home */}
@@ -351,6 +353,15 @@ function Navbar() {
               <MobileLink key={to} to={to} onClose={closeAll}>{label}</MobileLink>
             ))}
           </MobileSection>
+
+          {/* AI Portfolio */}
+          <Link
+            to="/portfolio"
+            onClick={closeAll}
+            className="block px-5 py-3.5 text-sm font-medium text-white/85 hover:text-white hover:bg-white/10 border-b border-white/10"
+          >
+            AI Portfolio
+          </Link>
 
           {/* Resources */}
           <MobileSection

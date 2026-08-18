@@ -39,7 +39,7 @@ export default function WebCaching() {
                             </p>
 
                             <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                                With more than 15 years of experience in web caching proxy deployment, we pride ourselves on our flagship offering — <Link to="/products/vicache-filter" className="text-[#0B2A4A] font-bold hover:underline">ViCache+Filter</Link> — a comprehensive GUI tool that simplifies configuring Squid while demonstrating clear ROI by showcasing the percentage of total bandwidth saved.
+                                With more than 15 years of experience in web caching proxy deployment, we pride ourselves on our flagship offering — <strong className="text-[#0B2A4A] font-bold">ViCache+Filter</strong> — a comprehensive GUI tool that simplifies configuring Squid while demonstrating clear ROI by showcasing the percentage of total bandwidth saved.
                             </p>
 
                             <p className="text-gray-700 leading-relaxed text-sm md:text-base">
@@ -135,8 +135,7 @@ export default function WebCaching() {
                                 <li><Link to="/services/qa-certification" className="hover:text-[#f16d05]">Product/Solution QA Certification</Link></li>
                                 <li><Link to="/services/virtualization" className="hover:text-[#f16d05]">Virtualization Services</Link></li>
                                 <li><Link to="/services/opensource" className="hover:text-[#f16d05]">Open Source Services</Link></li>
-                                <li><Link to="/services/security" className="hover:text-[#f16d05]">Enterprise Security</Link></li>
-                                <li><Link to="/services/demo-portals" className="hover:text-[#f16d05]">Solution Demo Portals</Link></li>
+                                                <li><Link to="/services/demo-portals" className="hover:text-[#f16d05]">Solution Demo Portals</Link></li>
                                 <li><Link to="/services/iot" className="hover:text-[#f16d05]">Internet of Things (IoT)</Link></li>
                                 <li><Link to="/services/database" className="hover:text-[#f16d05]">Database Services</Link></li>
                                 <li><Link to="/services/hadoop-analytics" className="hover:text-[#f16d05]">Hadoop &amp; Business Analytics</Link></li>

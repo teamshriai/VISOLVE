@@ -32,7 +32,6 @@ const slides = [
       { text: "Patient Portal", href: "https://www.visolve.com/patientportal/", external: true },
       { text: "Google Calendar Integration", href: "/services/openemr-pro/googlecalendar", external: false },
       { text: "Tele Health", href: "/services/openemr-pro/telehealth", external: false },
-      { text: "2FA", href: "/services/openemr-pro/2fa", external: false },
     ],
   },
   {
@@ -146,7 +145,6 @@ const subNavItems = [
   { name: "RCM", href: "/services/medicalbilling" },
   { name: "Patient Portal", href: "/services/patientportal" },
   { name: "Tele Health/Video consulting", href: "/services/openemr-pro/telehealth" },
-  { name: "2FA", href: "/services/openemr-pro/2fa" },
   { name: "Scheduler", href: "/services/openemr-pro/scheduler" },
   { name: "Google Calendar Integration", href: "/services/openemr-pro/googlecalendar" },
   { name: "Customization", href: "/services/customization" },

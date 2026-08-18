@@ -101,7 +101,6 @@ function HadoopBusinessAnalytics() {
                 <li><Link to="/services/qa-certification" className="hover:text-[#f16d05]">Product/Solution QA Certification</Link></li>
                 <li><Link to="/services/virtualization" className="hover:text-[#f16d05]">Virtualization Services</Link></li>
                 <li><Link to="/services/opensource" className="hover:text-[#f16d05]">OpenSource Services</Link></li>
-                <li><Link to="/services/security" className="hover:text-[#f16d05]">Enterprise Security</Link></li>
                 <li><Link to="/services/demo-portals" className="hover:text-[#f16d05]">Solutions Demo Portals</Link></li>
                 <li><Link to="/services/iot" className="hover:text-[#f16d05]">Internet of Things (IoT)</Link></li>
                 <li><Link to="/services/database" className="hover:text-[#f16d05]">Database Services</Link></li>

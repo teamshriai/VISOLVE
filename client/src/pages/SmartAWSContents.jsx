@@ -52,7 +52,6 @@ function SmartAWSContents() {
           <Link to="/services/openemr-pro" className="hover:text-[#ff8000] transition-colors">OpenEMR Pro</Link>
           <Link to="/services/patientportal" className="hover:text-[#ff8000] transition-colors">Patient Portal</Link>
           <Link to="/services/medicalbilling" className="hover:text-[#ff8000] transition-colors">Billing</Link>
-          <Link to="/services/openemr-pro/2fa" className="hover:text-[#ff8000] transition-colors">Two Factor Authentication</Link>
           <Link to="/services/openemr-pro/googlecalendar" className="hover:text-[#ff8000] transition-colors">Google Calendar</Link>
           <Link to="/services/openemr-pro/scheduler" className="hover:text-[#ff8000] transition-colors">Scheduler</Link>
           <Link to="/services/openemr-pro/interoperability" className="hover:text-[#ff8000] transition-colors">Interoperability</Link>

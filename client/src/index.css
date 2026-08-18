@@ -624,41 +624,23 @@ footer a {
   transition: color var(--motion-fast) var(--motion-easing);
 }
 
-/* ── Cloud Floating CTA Heartbeat Animation ── */
-@keyframes cloudHeartbeat {
-  0% {
-    transform: scale(1);
-    filter: drop-shadow(0 6px 14px rgba(8, 36, 63, 0.22)) drop-shadow(0 0 10px rgba(40, 120, 168, 0.15));
-  }
-  12% {
-    transform: scale(1.04);
-    filter: drop-shadow(0 10px 22px rgba(8, 36, 63, 0.32)) drop-shadow(0 0 18px rgba(40, 120, 168, 0.4));
-  }
-  24% {
-    transform: scale(1);
-    filter: drop-shadow(0 6px 14px rgba(8, 36, 63, 0.22)) drop-shadow(0 0 10px rgba(40, 120, 168, 0.15));
-  }
-  36% {
-    transform: scale(1.02);
-    filter: drop-shadow(0 8px 18px rgba(8, 36, 63, 0.28)) drop-shadow(0 0 14px rgba(40, 120, 168, 0.3));
-  }
-  48% {
-    transform: scale(1);
-    filter: drop-shadow(0 6px 14px rgba(8, 36, 63, 0.22)) drop-shadow(0 0 10px rgba(40, 120, 168, 0.15));
-  }
-  100% {
-    transform: scale(1);
-    filter: drop-shadow(0 6px 14px rgba(8, 36, 63, 0.22)) drop-shadow(0 0 10px rgba(40, 120, 168, 0.15));
-  }
+/* ============================================================
+   HERO GALLERY — autoplay progress rail
+   ------------------------------------------------------------
+   The active segment fills across the autoplay interval. The fill element is
+   remounted on every slide change (React key), which restarts the animation
+   from zero without a forced reflow.
+   ============================================================ */
+@keyframes carouselProgress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
 }
-
-.cloud-heartbeat-anim {
-  animation: cloudHeartbeat 2.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-  transform-origin: center center;
-  will-change: transform, filter;
+.carousel-progress {
+  transform-origin: left;
+  animation: carouselProgress 6s linear forwards;
+  will-change: transform;
 }
-
-.cloud-heartbeat-anim:hover {
+.carousel-progress.is-paused {
   animation-play-state: paused;
 }
 
@@ -671,7 +653,7 @@ footer a {
   .v-link,
   .v-icon-shift,
   .v-input,
-  .cloud-heartbeat-anim {
+  .carousel-progress {
     transition: none !important;
     transform: none !important;
     animation: none !important;
@@ -679,6 +661,10 @@ footer a {
   .v-reveal {
     opacity: 1 !important;
     transform: none !important;
+  }
+  /* Still show which slide is active, just without the sweep */
+  .carousel-progress {
+    transform: scaleX(1) !important;
   }
 }
 

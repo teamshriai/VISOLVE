@@ -8,13 +8,14 @@ import CoreTeam from "../pages/company/CoreTeam";
 import Services from "../pages/services/Services";
 import EMR from "../pages/services/EMR";
 import OpenEMR from "../pages/services/OpenEMR";
+import AIHealthcareSolutions from "../pages/services/AIHealthcareSolutions";
+import ProductDevelopment from "../pages/services/ProductDevelopment";
 import MedicalBilling from "../pages/services/MedicalBilling";
 import Interoperability from "../pages/services/Interoperability";
 import Customization from "../pages/services/Customization";
 import PatientPortal from "../pages/services/PatientPortal";
 import OpenEMRPro from "../pages/services/OpenEMRPro";
 import OpenEMRProFeatures from "../pages/services/openemr-pro/Features";
-import TwoFA from "../pages/services/openemr-pro/TwoFA";
 import EPrescription from "../pages/services/openemr-pro/EPrescription";
 import GoogleCalendar from "../pages/services/openemr-pro/GoogleCalendar";
 import OpenEMRProInteroperability from "../pages/services/openemr-pro/Interoperability";
@@ -24,8 +25,6 @@ import Support from "../pages/services/openemr-pro/Support";
 import Telehealth from "../pages/services/openemr-pro/Telehealth";
 
 import TechnicalWriting from "../pages/services/TechnicalWriting";
-import ViCacheFilter from "../pages/products/ViCacheFilter";
-import PBM from "../pages/products/PBM";
 
 // Enterprise IT Service Pages
 import EnterpriseIT from "../pages/services/EnterpriseIT";
@@ -35,7 +34,6 @@ import PerformanceTools from "../pages/services/PerformanceTools";
 import QACertification from "../pages/services/QACertification";
 import Virtualization from "../pages/services/Virtualization";
 import OpenSourceServices from "../pages/services/OpenSourceServices";
-import EnterpriseSecurity from "../pages/services/EnterpriseSecurity";
 import SolutionDemoPortals from "../pages/services/SolutionDemoPortals";
 import IoT from "../pages/services/IoT";
 import DatabaseServices from "../pages/services/DatabaseServices";
@@ -85,6 +83,8 @@ function AppRoutes() {
         <Route path="services" element={<Services />} />
         <Route path="services/enterprise-it" element={<EnterpriseIT />} />
         <Route path="services/emr" element={<EMR />} />
+        <Route path="services/ai-healthcare" element={<AIHealthcareSolutions />} />
+        <Route path="services/product-development" element={<ProductDevelopment />} />
         <Route path="services/openemr" element={<OpenEMR />} />
         <Route path="services/medicalbilling" element={<MedicalBilling />} />
         <Route path="services/medical-billing" element={<MedicalBilling />} />
@@ -94,7 +94,6 @@ function AppRoutes() {
         <Route path="services/patient-portal" element={<PatientPortal />} />
         <Route path="services/openemr-pro" element={<OpenEMRPro />} />
         <Route path="services/openemr-pro/features" element={<OpenEMRProFeatures />} />
-        <Route path="services/openemr-pro/2fa" element={<TwoFA />} />
         <Route path="services/openemr-pro/eprescription" element={<EPrescription />} />
         <Route path="services/openemr-pro/googlecalendar" element={<GoogleCalendar />} />
         <Route path="services/openemr-pro/interoperability" element={<OpenEMRProInteroperability />} />
@@ -115,13 +114,10 @@ function AppRoutes() {
         <Route path="services/technical-writing" element={<TechnicalWriting />} />
         <Route path="services/virtualization" element={<Virtualization />} />
         <Route path="services/opensource" element={<OpenSourceServices />} />
-        <Route path="services/security" element={<EnterpriseSecurity />} />
         <Route path="services/demo-portals" element={<SolutionDemoPortals />} />
         <Route path="services/iot" element={<IoT />} />
         <Route path="services/database" element={<DatabaseServices />} />
         <Route path="services/web-caching" element={<WebCaching />} />
-        <Route path="products/vicache-filter" element={<ViCacheFilter />} />
-        <Route path="products/pbm" element={<PBM />} />
         <Route path="services/vista-ehr" element={<VistaEHR />} />
         <Route path="services/hadoop-analytics" element={<HadoopBusinessAnalytics />} />
 

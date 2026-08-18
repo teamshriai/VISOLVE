@@ -427,12 +427,6 @@ function CloudServices() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/services/security" className="hover:text-[#155A8A] transition-colors flex items-center justify-between">
-                    <span>Enterprise Security</span>
-                    <FiChevronRight className="text-gray-400 text-xs" />
-                  </Link>
-                </li>
-                <li>
                   <Link to="/services/demo-portals" className="hover:text-[#155A8A] transition-colors flex items-center justify-between">
                     <span>Solution Demo Portals</span>
                     <FiChevronRight className="text-gray-400 text-xs" />
