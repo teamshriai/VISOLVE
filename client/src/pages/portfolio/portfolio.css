@@ -1,0 +1,110 @@
+/* ============================================================
+   PORTFOLIO DESIGN SYSTEM
+   ------------------------------------------------------------
+   The portfolio (/portfolio) is a sub-brand with its own palette,
+   typeface and chrome. Everything below is namespaced to
+   `.portfolio-root` so it cannot leak into the main ViSolve site,
+   and so the main site's global element styles cannot leak in.
+
+   Imported from `src/index.css` — keeping it in the Tailwind entry
+   makes the cascade-layer order deterministic.
+   ============================================================ */
+
+/* ── Palette tokens → generates text-/bg-/border-/from-/to-medical-* ── */
+@theme {
+  --color-medical-blue: #4338ca;
+  --color-medical-teal: #7c3aed;
+  --color-medical-dark: #1e1b4b;
+}
+
+/* ── Decorative dotted grid used behind the portfolio hero ── */
+@utility bg-grid-pattern {
+  background-image: radial-gradient(circle at 1px 1px, #ddd6fe 1px, transparent 0);
+}
+
+/* Tailwind v3's space-y-5, kept verbatim for the two contact-page columns.
+   v4 redefined space-y-* as "margin-bottom on every child but the last"; v3
+   was "margin-top AND margin-bottom:0 on every child but the first". Both
+   halves matter here: the form's first two children are `type="hidden"`
+   inputs, and the margin-bottom:0 half flattens the mb-1/mb-6/mt-6 utilities
+   on the children into one even 20px rhythm. */
+@utility space-y-5-legacy {
+  & > :not([hidden]) ~ :not([hidden]) {
+    margin-top: calc(var(--spacing) * 5);
+    margin-bottom: 0;
+  }
+}
+
+@layer base {
+  /* Re-establish the portfolio's typographic baseline. The main site
+     styles bare h1–h6/p/a elements globally; those rules must stop at
+     the portfolio boundary, where layout comes from utilities alone. */
+  .portfolio-root {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #1e1b4b;
+    background-color: #fafaf9;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  .portfolio-root :is(h1, h2, h3, h4, h5, h6) {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: normal;
+    color: inherit;
+  }
+
+  .portfolio-root p {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  .portfolio-root a,
+  .portfolio-root a:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .portfolio-root ::placeholder {
+    color: #9ca3af;
+    opacity: 1;
+  }
+}
+
+@layer components {
+  .portfolio-root .gradient-text {
+    background-image: linear-gradient(to right, #4338ca, #7c3aed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .portfolio-root .card-hover {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .portfolio-root .card-hover:hover {
+    transform: translateY(-0.25rem);
+    box-shadow:
+      0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+}
+
+/* Unlayered on purpose: the main site's global `:focus-visible` orange ring
+   is also unlayered, so matching it here is the only way to keep the
+   portfolio on its own (native) focus affordance. */
+.portfolio-root :focus-visible {
+  outline: revert;
+  outline-offset: revert;
+}
+
+.portfolio-root :is(input, select, textarea):focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
