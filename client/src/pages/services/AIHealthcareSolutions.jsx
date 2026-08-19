@@ -22,21 +22,21 @@ import { useReveal } from "../../hooks/useReveal";
 const capabilities = [
   {
     icon: FiCpu,
-    title: "Clinical AI Engineering",
+    title: "AI Healthcare Solutions",
     description:
-      "Design and delivery of AI components that sit inside clinical software — model integration, inference services and the APIs that connect them to existing EHR workflows.",
+      "Design and delivery of AI components that sit inside healthcare software — model integration, inference services and the APIs that connect them to existing EHR workflows.",
   },
   {
     icon: FiActivity,
     title: "Decision Support Interfaces",
     description:
-      "Front-end and service work for tools that surface AI output to clinicians, built so results stay reviewable, attributable and easy to act on at the point of care.",
+      "Front-end and service work for tools that surface AI output to care teams, built so results stay reviewable, attributable and easy to act on at the point of care.",
   },
   {
     icon: FiDatabase,
     title: "Healthcare Data Pipelines",
     description:
-      "Ingestion, normalisation and storage for clinical and research data, including HL7 and FHIR interfaces, so downstream models work from consistent inputs.",
+      "Ingestion, normalisation and storage for healthcare and research data, including HL7 and FHIR interfaces, so downstream models work from consistent inputs.",
   },
   {
     icon: FiShield,
@@ -51,7 +51,7 @@ const engagement = [
     step: "01",
     title: "Scope",
     description:
-      "We review the clinical workflow, the data available to it and the constraints you are working under, then agree what is worth building first.",
+      "We review the care workflow, the data available to it and the constraints you are working under, then agree what is worth building first.",
   },
   {
     step: "02",
@@ -93,9 +93,9 @@ function AIHealthcareSolutions() {
             AI Healthcare Solutions
           </h1>
           <p className="text-[#55758C] text-base sm:text-lg leading-relaxed">
-            Engineering support for healthcare teams putting AI into clinical and
+            Hands-on support for healthcare teams putting AI into healthcare and
             research software — from the data pipelines underneath it to the
-            interfaces clinicians actually use.
+            interfaces care teams actually use.
           </p>
           <div className="flex flex-wrap gap-3 pt-1">
             <Link
