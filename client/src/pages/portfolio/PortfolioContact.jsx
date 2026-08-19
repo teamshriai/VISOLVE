@@ -77,9 +77,9 @@ export default function PortfolioContact() {
     };
 
     return (
-        <div className="portfolio-root min-h-screen bg-linear-to-b/srgb from-stone-50 via-violet-50/40 to-stone-50">
+        <div className="portfolio-root min-h-screen bg-linear-to-b/srgb from-stone-50 via-blue-50/40 to-stone-50">
             {/* Navbar bar */}
-            <header className="fixed top-0 w-full z-50 bg-stone-50/85 backdrop-blur-md border-b border-violet-100">
+            <header className="fixed top-0 w-full z-50 bg-stone-50/85 backdrop-blur-md border-b border-blue-100">
                 <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
                     <BrandLogos />
                     <Link
@@ -114,7 +114,7 @@ export default function PortfolioContact() {
                             <a
                                 key={label}
                                 href={href}
-                                className="flex items-start gap-4 bg-white/90 border border-violet-100 rounded-2xl p-5 card-hover"
+                                className="flex items-start gap-4 bg-white/90 border border-blue-100 rounded-2xl p-5 card-hover"
                             >
                                 <div className="w-11 h-11 rounded-xl bg-linear-to-br/srgb from-medical-blue to-medical-teal flex items-center justify-center shrink-0">
                                     <Icon size={20} className="text-white" />
@@ -138,7 +138,7 @@ export default function PortfolioContact() {
                     </div>
 
                     {/* Contact form */}
-                    <div className="lg:col-span-3 bg-white/90 border border-violet-100 rounded-2xl p-8 shadow-xs">
+                    <div className="lg:col-span-3 bg-white/90 border border-blue-100 rounded-2xl p-8 shadow-xs">
                         {status === "sent" || status === "draft" ? (
                             <div className="flex flex-col items-center justify-center h-full py-16 text-center">
                                 <CheckCircle size={56} className="text-medical-teal mb-4" />
@@ -152,7 +152,7 @@ export default function PortfolioContact() {
                                 </p>
                                 <button
                                     onClick={() => { setStatus("idle"); setForm({ name: "", email: "", company: "", subject: "", message: "" }); }}
-                                    className="bg-medical-blue text-white font-semibold px-7 py-3 rounded-full hover:bg-medical-dark transition"
+                                    className="bg-medical-blue text-white font-semibold px-7 py-3 rounded-lg hover:bg-medical-dark transition"
                                 >
                                     Send Another Message
                                 </button>
@@ -250,7 +250,7 @@ export default function PortfolioContact() {
                                 <button
                                     type="submit"
                                     disabled={status === "sending"}
-                                    className="w-full inline-flex items-center justify-center gap-2 bg-medical-blue text-white font-semibold px-7 py-3 rounded-full hover:bg-medical-dark disabled:opacity-60 transition"
+                                    className="w-full inline-flex items-center justify-center gap-2 bg-medical-blue text-white font-semibold px-7 py-3 rounded-lg hover:bg-medical-dark disabled:opacity-60 transition"
                                 >
                                     {status === "sending" ? (
                                         "Sending…"
@@ -267,7 +267,7 @@ export default function PortfolioContact() {
             </div>
 
             {/* Footer */}
-            <footer className="py-10 px-6 text-center text-sm text-slate-500 border-t border-violet-100 bg-stone-50">
+            <footer className="py-10 px-6 text-center text-sm text-slate-500 border-t border-blue-100 bg-stone-50">
                 © {new Date().getFullYear()} Visolve Technologies. All rights reserved. |{" "}
                 <Link to="/" className="text-medical-blue font-medium">
                     visolve.com

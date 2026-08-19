@@ -295,7 +295,7 @@ function About() {
                   Talk to our experts:
                 </p>
                 <p className="text-base font-bold text-gray-800">
-                  +1 (408) 850 2243
+                  +1 408 666 4320
                 </p>
               </div>
             </div>

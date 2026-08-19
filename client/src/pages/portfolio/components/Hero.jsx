@@ -3,11 +3,11 @@ import { Dna } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative pt-40 pb-28 bg-linear-to-b/srgb from-stone-50 via-violet-50/60 to-stone-50 overflow-hidden">
+    <section className="relative pt-40 pb-28 bg-linear-to-b/srgb from-stone-50 via-blue-50/60 to-stone-50 overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0 -z-10 bg-grid-pattern [background-size:24px_24px] opacity-30" />
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-medical-teal/20 rounded-full blur-3xl" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-medical-blue/20 rounded-full blur-3xl" />
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-medical-teal/10 rounded-full blur-3xl" />
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-medical-blue/10 rounded-full blur-3xl" />
       <svg
         aria-hidden="true"
         viewBox="0 0 440 300"
@@ -29,7 +29,7 @@ export default function Hero() {
   <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 text-xs font-semibold text-medical-blue bg-violet-50 border border-violet-200 px-4 py-1.5 rounded-full mb-6"
+          className="inline-flex items-center gap-2 text-xs font-semibold text-medical-blue bg-blue-50 border border-blue-200 px-4 py-1.5 rounded-full mb-6"
         >
           <Dna size={14} /> Technical Excellence in AI & Precision Medicine
         </motion.div>

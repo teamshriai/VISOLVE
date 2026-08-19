@@ -14,7 +14,7 @@ export default function CTA() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/portfolio/contact"
-            className="bg-white text-medical-blue font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition"
+            className="bg-white text-medical-blue font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition"
           >
             Contact us
           </Link>

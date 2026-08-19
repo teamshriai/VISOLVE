@@ -291,7 +291,7 @@ function FAQ() {
                 <div id="faq14" className="pt-4 border-t border-gray-200">
                   <h3 className="text-base font-bold text-gray-900 mb-2">What should I do to get started?</h3>
                   <p className="text-sm leading-relaxed text-gray-700">
-                    The first step towards ICD-10 compliance is carrying out an “ICD-10 Assessment, Impact Analysis, and Planning”. ViSolve Healthcare IT can assist you throughout the compliance process. Contact our consultants at +1 (408) 850 2243 or email us at{" "}
+                    The first step towards ICD-10 compliance is carrying out an “ICD-10 Assessment, Impact Analysis, and Planning”. ViSolve Healthcare IT can assist you throughout the compliance process. Contact our consultants at +1 408 666 4320 or email us at{" "}
                     <a href="mailto:services@visolve.com" className="text-[#0070c0] hover:underline">
                       services@visolve.com
                     </a>.
@@ -592,7 +592,7 @@ function FAQ() {
                   Talk to our experts:
                 </p>
                 <p className="text-sm sm:text-base font-bold text-gray-800">
-                  +1 (408) 850 2243
+                  +1 408 666 4320
                 </p>
               </div>
             </div>

@@ -45,7 +45,7 @@ export default function CoreExpertise() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {domains.map((d) => (
-            <div key={d.title} className="bg-white/90 rounded-2xl p-7 border border-violet-100 card-hover flex flex-col">
+            <div key={d.title} className="bg-white/90 rounded-2xl p-7 border border-blue-100 card-hover flex flex-col">
               <div className="w-12 h-12 rounded-xl bg-linear-to-br/srgb from-medical-blue to-medical-teal flex items-center justify-center mb-5">
                 <d.icon className="text-white" size={22} />
               </div>

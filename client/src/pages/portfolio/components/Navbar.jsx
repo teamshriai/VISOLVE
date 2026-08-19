@@ -12,7 +12,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed top-0 w-full z-50 bg-stone-50/85 backdrop-blur-md border-b border-violet-100">
+    <header className="fixed top-0 w-full z-50 bg-stone-50/85 backdrop-blur-md border-b border-blue-100">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <BrandLogos />
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
@@ -33,7 +33,7 @@ export default function Navbar() {
         </nav>
         <Link
           to="/portfolio/contact"
-          className="hidden md:inline-block bg-medical-blue text-white text-sm font-semibold px-5 py-2 rounded-full hover:bg-medical-dark transition"
+          className="hidden md:inline-block bg-medical-blue text-white text-sm font-semibold px-5 py-2 rounded-lg hover:bg-medical-dark transition"
         >
           Discuss Your Project
         </Link>

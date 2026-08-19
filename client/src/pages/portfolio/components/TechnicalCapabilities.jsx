@@ -22,11 +22,11 @@ export default function TechnicalCapabilities() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {groups.map((g) => (
-            <div key={g.title} className="bg-white/90 rounded-2xl p-6 border border-violet-100 card-hover">
+            <div key={g.title} className="bg-white/90 rounded-2xl p-6 border border-blue-100 card-hover">
               <h4 className="font-bold mb-4 text-medical-blue">{g.title}</h4>
               <div className="flex flex-wrap gap-2">
                 {g.items.map((i) => (
-                  <span key={i} className="text-xs font-medium bg-violet-50 text-slate-700 px-3 py-1.5 rounded-full">
+                  <span key={i} className="text-xs font-medium bg-blue-50 text-slate-700 px-3 py-1.5 rounded-full">
                     {i}
                   </span>
                 ))}

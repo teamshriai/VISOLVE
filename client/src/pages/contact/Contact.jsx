@@ -129,10 +129,10 @@ function Contact() {
                   <div className="min-w-0">
                     <p className="text-xs font-semibold text-[#55758C] uppercase tracking-wider">Call Us</p>
                     <a
-                      href="tel:+14088502243"
+                      href="tel:+14086664320"
                       className="text-sm font-bold text-[#08243F] hover:text-[#155A8A] transition-colors truncate block mt-0.5"
                     >
-                      +1 (408) 850 2243
+                      +1 408 666 4320
                     </a>
                   </div>
                 </div>
@@ -166,7 +166,7 @@ function Contact() {
                     <p className="text-sm text-[#55758C] leading-relaxed">
                       6559 Springpath Lane<br />
                       San Jose, California - 95120, USA<br />
-                      <strong className="text-[#08243F]">Tel:</strong> +1 (408) 850 2243
+                      <strong className="text-[#08243F]">Tel:</strong> +1 408 666 4320
                     </p>
                   </div>
 

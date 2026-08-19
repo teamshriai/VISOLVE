@@ -6,7 +6,6 @@ import {
   FiCloud,
   FiLayout,
   FiCode,
-  FiMonitor,
   FiChevronRight
 } from "react-icons/fi";
 import { useReveal } from "../../hooks/useReveal";
@@ -16,13 +15,13 @@ const services = [
     id: 1,
     title: "AI Healthcare Solutions",
     description:
-      "Clinical AI engineering, decision-support interfaces and the healthcare data pipelines underneath them.",
+      "Build and support for AI, Interfaces, Dashboards and the healthcare data pipelines.",
     link: "/services/ai-healthcare",
     icon: FiCpu,
   },
   {
     id: 2,
-    title: "OpenEMR",
+    title: "OpenEMR Pro",
     description:
       "Customization, implementation and support for OpenEMR, tailored to how your practice actually works.",
     link: "/services/openemr",
@@ -53,20 +52,12 @@ const services = [
     icon: FiLayout,
   },
   {
-    id: 7,
+    id: 6,
     title: "OpenSource Services",
     description:
       "OpenEMR, Linux and enterprise open source — deployment, customization and long-term maintenance.",
     link: "/services/opensource",
     icon: FiCode,
-  },
-  {
-    id: 8,
-    title: "Solution Demo Portals",
-    description:
-      "Interactive demo environments and portals that let prospects evaluate your solution on their own terms.",
-    link: "/services/demo-portals",
-    icon: FiMonitor,
   },
 ];
 
@@ -102,9 +93,9 @@ function ServicesGrid() {
             </h2>
             <div className="mt-3 w-16 h-1 rounded-full bg-[#F97316]" />
             <p className="mt-4 text-sm sm:text-base text-[#55758C] leading-relaxed">
-              AI healthcare engineering, OpenEMR, cloud and migration, product
-              development and QA — delivered as managed practices and supported
-              end to end by our own team.
+              AI healthcare solutions, OpenEMR, cloud and migration, product
+              development and open source — delivered as managed practices and
+              supported end to end by our own team.
             </p>
           </div>
           <Link
@@ -116,8 +107,8 @@ function ServicesGrid() {
           </Link>
         </div>
 
-        {/* Service tiles — 1 / 2 / 4 across, staggered reveal */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+        {/* Service tiles — 1 / 2 / 3 across (3 up, 3 down on desktop), staggered reveal */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
           {services.map((item, i) => {
             const Icon = item.icon;
             return (

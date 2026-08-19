@@ -166,8 +166,8 @@ function OpenSourceServices() {
                   services@visolve.com
                 </a>{' '}
                 or call us at{' '}
-                <a href="tel:+14088502243" className="text-[#f16d05] font-semibold underline">
-                  +1 (408) 850 2243
+                <a href="tel:+14086664320" className="text-[#f16d05] font-semibold underline">
+                  +1 408 666 4320
                 </a>.
               </p>
             </div>
@@ -212,7 +212,7 @@ function OpenSourceServices() {
               <p className="text-sm font-semibold text-gray-700">Talk to our experts:</p>
               <div className="flex items-center justify-center space-x-2 text-[#215B87]">
                 <FiPhone className="text-xl" />
-                <a href="tel:+14088502243" className="font-bold text-lg hover:underline">+1 (408) 850 2243</a>
+                <a href="tel:+14086664320" className="font-bold text-lg hover:underline">+1 408 666 4320</a>
               </div>
             </div>
           </div>

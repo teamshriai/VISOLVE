@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 /**
  * AI & Precision Medicine portfolio landing page.
  *
- * The portfolio carries its own brand (IBM Plex Sans, indigo/violet palette)
+ * The portfolio carries its own brand (IBM Plex Sans, a navy/orange palette tuned close to the main site)
  * and its own chrome, so it renders outside MainLayout. `portfolio-root`
  * scopes the portfolio design system — see `portfolio.css`.
  */

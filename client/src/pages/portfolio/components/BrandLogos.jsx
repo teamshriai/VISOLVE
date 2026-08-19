@@ -19,7 +19,7 @@ export default function BrandLogos() {
           className="h-14 w-auto sm:h-16 object-contain drop-shadow-xs"
         />
       </a>
-      <span aria-hidden="true" className="h-8 w-px bg-violet-200 sm:h-10" />
+      <span aria-hidden="true" className="h-8 w-px bg-blue-200 sm:h-10" />
       <Link to="/" className="flex items-center hover:opacity-90 transition">
         <img src={visolveLogo} alt="Visolve" className="h-9 w-auto sm:h-11" />
       </Link>

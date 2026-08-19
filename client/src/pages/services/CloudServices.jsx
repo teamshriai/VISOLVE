@@ -64,11 +64,11 @@ function CloudServices() {
                 <FiArrowRight />
               </Link>
               <a
-                href="tel:+14088502243"
+                href="tel:+14086664320"
                 className="px-6 py-3 bg-white border border-[#08243F] text-[#08243F] hover:bg-[#EAF3F8]/50 font-semibold rounded-lg transition-colors inline-flex items-center space-x-2 text-sm sm:text-base"
               >
                 <FiPhone className="text-[#F59E0B]" />
-                <span>+1 (408) 850 2243</span>
+                <span>+1 408 666 4320</span>
               </a>
             </div>
           </div>
@@ -378,8 +378,8 @@ function CloudServices() {
               />
               <div>
                 <p className="text-xs font-semibold text-[#0D3557] uppercase tracking-wide">Talk to our experts</p>
-                <a href="tel:+14088502243" className="text-base font-bold text-[#08243F] hover:text-[#155A8A] transition-colors block">
-                  +1 (408) 850 2243
+                <a href="tel:+14086664320" className="text-base font-bold text-[#08243F] hover:text-[#155A8A] transition-colors block">
+                  +1 408 666 4320
                 </a>
               </div>
             </div>

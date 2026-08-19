@@ -20,7 +20,7 @@ export default function IndustriesWeServe() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {industries.map((ind) => (
-          <div key={ind.name} className="rounded-xl border border-violet-100 bg-white/90 p-6 leading-relaxed card-hover flex flex-col justify-center">
+          <div key={ind.name} className="rounded-xl border border-blue-100 bg-white/90 p-6 leading-relaxed card-hover flex flex-col justify-center">
             <h4 className="font-bold text-medical-dark mb-2">{ind.name}</h4>
             <p className="text-sm text-slate-600">{ind.desc}</p>
           </div>

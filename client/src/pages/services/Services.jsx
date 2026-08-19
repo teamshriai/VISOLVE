@@ -151,10 +151,10 @@ function Services() {
               <div className="flex items-center space-x-2">
                 <span className="font-semibold text-[#0D3557]">Phone:</span>
                 <a
-                  href="tel:+14088502243"
+                  href="tel:+14086664320"
                   className="text-[#155A8A] hover:text-[#08243F] font-semibold underline decoration-amber-300/80 transition-colors"
                 >
-                  +1 (408) 850 2243
+                  +1 408 666 4320
                 </a>
               </div>
             </div>

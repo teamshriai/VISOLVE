@@ -10,16 +10,20 @@
    makes the cascade-layer order deterministic.
    ============================================================ */
 
-/* ── Palette tokens → generates text-/bg-/border-/from-/to-medical-* ── */
+/* ── Palette tokens → generates text-/bg-/border-/from-/to-medical-*.
+   Retuned to sit alongside the main ViSolve palette: medical-blue is the
+   site's corporate blue, medical-teal (kept for the var/utility names, even
+   though it's no longer teal) is the site's warm-orange accent, and
+   medical-dark is the site's deep navy. ── */
 @theme {
-  --color-medical-blue: #4338ca;
-  --color-medical-teal: #7c3aed;
-  --color-medical-dark: #1e1b4b;
+  --color-medical-blue: #155a8a;
+  --color-medical-teal: #f97316;
+  --color-medical-dark: #08243f;
 }
 
 /* ── Decorative dotted grid used behind the portfolio hero ── */
 @utility bg-grid-pattern {
-  background-image: radial-gradient(circle at 1px 1px, #ddd6fe 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, #d7e3ec 1px, transparent 0);
 }
 
 /* Tailwind v3's space-y-5, kept verbatim for the two contact-page columns.
@@ -43,7 +47,7 @@
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 1rem;
     line-height: 1.5;
-    color: #1e1b4b;
+    color: #08243f;
     background-color: #fafaf9;
     -webkit-font-smoothing: auto;
     -moz-osx-font-smoothing: auto;
@@ -77,7 +81,7 @@
 
 @layer components {
   .portfolio-root .gradient-text {
-    background-image: linear-gradient(to right, #4338ca, #7c3aed);
+    background-image: linear-gradient(to right, #155a8a, #f97316);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
