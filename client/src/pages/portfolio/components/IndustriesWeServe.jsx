@@ -11,20 +11,25 @@ const industries = [
 
 export default function IndustriesWeServe() {
   return (
-    <section id="industries" className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="text-sm font-semibold text-medical-teal uppercase tracking-widest mb-3">
-          Who We Collaborate With
-        </h2>
-        <h3 className="text-3xl md:text-4xl font-bold mb-4">For Teams Defining What&apos;s Next</h3>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {industries.map((ind) => (
-          <div key={ind.name} className="rounded-xl border border-blue-100 bg-white/90 p-6 leading-relaxed card-hover flex flex-col justify-center">
-            <h4 className="font-bold text-medical-dark mb-2">{ind.name}</h4>
-            <p className="text-sm text-slate-600">{ind.desc}</p>
-          </div>
-        ))}
+    <section
+      id="industries"
+      className="bg-gradient-to-b from-tint-mist to-tint-pink-soft py-section px-gutter [--card-accent:165_141_232]"
+    >
+      <div className="max-w-page mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-eyebrow uppercase text-accent-deep mb-4">
+            Who We Collaborate With
+          </p>
+          <h2 className="text-h2 font-light">For Teams Defining What&apos;s Next</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {industries.map((ind) => (
+            <div key={ind.name} className="card rounded-none p-6 leading-relaxed flex flex-col justify-center">
+              <h3 className="text-h4 font-medium text-ink mb-2">{ind.name}</h3>
+              <p className="text-sm text-ink-muted">{ind.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

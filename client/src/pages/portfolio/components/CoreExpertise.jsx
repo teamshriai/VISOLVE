@@ -35,26 +35,27 @@ const domains = [
 
 export default function CoreExpertise() {
   return (
-    <section id="expertise" className="py-24 px-6 bg-stone-50">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="expertise"
+      className="bg-gradient-to-b from-tint-lavender to-tint-pink py-section px-gutter [--card-accent:165_141_232]"
+    >
+      <div className="max-w-page mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-sm font-semibold text-medical-teal uppercase tracking-widest mb-3">
+          <p className="text-eyebrow uppercase text-accent-deep mb-4">
             Core Expertise
-          </h2>
-          <h3 className="text-3xl md:text-4xl font-bold">Five Disciplines. One Integrated Technology Practice.</h3>
+          </p>
+          <h2 className="text-h2 font-light">Five Disciplines. One Integrated Technology Platform.</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {domains.map((d) => (
-            <div key={d.title} className="bg-white/90 rounded-2xl p-7 border border-blue-100 card-hover flex flex-col">
-              <div className="w-12 h-12 rounded-xl bg-linear-to-br/srgb from-medical-blue to-medical-teal flex items-center justify-center mb-5">
-                <d.icon className="text-white" size={22} />
-              </div>
-              <h4 className="text-lg font-bold mb-2">{d.title}</h4>
-              <p className="text-sm text-gray-500 mb-4 grow">{d.desc}</p>
+            <div key={d.title} className="card rounded-none p-7 flex flex-col">
+              <d.icon className="text-accent-deep mb-5" size={20} strokeWidth={1.5} aria-hidden="true" />
+              <h3 className="text-h4 font-medium mb-2">{d.title}</h3>
+              <p className="text-sm text-ink-muted mb-4 flex-grow">{d.desc}</p>
               <ul className="space-y-2">
                 {d.items.map((item) => (
-                  <li key={item} className="text-sm text-gray-600 flex items-start gap-2">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-medical-teal shrink-0" />
+                  <li key={item} className="text-sm text-ink-soft flex items-start gap-2.5">
+                    <span className="mt-[11px] w-2 h-px bg-ink-muted flex-shrink-0" />
                     {item}
                   </li>
                 ))}

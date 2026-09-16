@@ -8,35 +8,91 @@
 
    Imported from `src/index.css` — keeping it in the Tailwind entry
    makes the cascade-layer order deterministic.
+
+   The palette mirrors shri-ai.org: the page opens on a near-black
+   zone lit by coloured light sources, then fades through a violet
+   crossover into bright pastel bands down to the footer.
    ============================================================ */
 
-/* ── Palette tokens → generates text-/bg-/border-/from-/to-medical-*.
-   Retuned to sit alongside the main ViSolve palette: medical-blue is the
-   site's corporate blue, medical-teal (kept for the var/utility names, even
-   though it's no longer teal) is the site's warm-orange accent, and
-   medical-dark is the site's deep navy. ── */
+/* ── Tokens. These generate text-/bg-/border-/from-/to- utilities.
+   Every name here is unique to the portfolio — none collide with a
+   utility the main ViSolve site uses, and no default scale
+   (text-xl, font-bold, rounded-lg …) is overridden, so the main
+   site's utilities keep their stock values. ── */
 @theme {
-  --color-medical-blue: #155a8a;
-  --color-medical-teal: #f97316;
-  --color-medical-dark: #08243f;
-}
+  /* Ink — text on the light zone */
+  --color-ink: #14141e;
+  --color-ink-soft: #44444e;
+  --color-ink-muted: #6b6b7a;
 
-/* ── Decorative dotted grid used behind the portfolio hero ── */
-@utility bg-grid-pattern {
-  background-image: radial-gradient(circle at 1px 1px, #d7e3ec 1px, transparent 0);
-}
+  /* Neutral surfaces */
+  --color-surface: #ffffff;
+  --color-surface-alt: #f8f7f5;
 
-/* Tailwind v3's space-y-5, kept verbatim for the two contact-page columns.
-   v4 redefined space-y-* as "margin-bottom on every child but the last"; v3
-   was "margin-top AND margin-bottom:0 on every child but the first". Both
-   halves matter here: the form's first two children are `type="hidden"`
-   inputs, and the margin-bottom:0 half flattens the mb-1/mb-6/mt-6 utilities
-   on the children into one even 20px rhythm. */
-@utility space-y-5-legacy {
-  & > :not([hidden]) ~ :not([hidden]) {
-    margin-top: calc(var(--spacing) * 5);
-    margin-bottom: 0;
-  }
+  /* Dark zone — the top of the page */
+  --color-night: #090910;
+  --color-night-soft: #141220;
+  --color-night-plum: #201830;
+  --color-on-dark: #ffffff;
+  --color-on-dark-soft: #b3b3bd;
+
+  /* Accents. --color-accent-deep is the only blue that clears WCAG AA
+     on the bright tints; --color-accent-bright and --color-brand-pink
+     are for the dark zone. */
+  --color-accent: #3a82c4;
+  --color-accent-deep: #1b5a8f;
+  --color-accent-bright: #7fb2e3;
+  --color-brand-pink: #f06a9b;
+  --color-brand-pink-deep: #7a2050;
+  --color-brand-lav: #a58de8;
+
+  /* Hairlines */
+  --color-line: #e5e3df;
+  --color-line-strong: #d8d5d0;
+
+  /* Light zone — background washes, lightened from shri-ai.org's hero
+     gradient so ink-muted and accent-deep still clear AA on them. */
+  --color-tint-cream: #fdf0de;
+  --color-tint-lavender: #f3edfa;
+  --color-tint-sky: #e7f1ff;
+  --color-tint-mist: #e6f3ff;
+  --color-tint-pink: #fcebf3;
+  --color-tint-pink-soft: #fce9f2;
+
+  /* Type scale */
+  --text-2xs: 0.68rem;
+  --text-2xs--line-height: 1.4;
+
+  --text-eyebrow: 0.68rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.18em;
+  --text-eyebrow--font-weight: 500;
+
+  --text-lead: clamp(0.98rem, 1.3vw, 1.08rem);
+  --text-lead--line-height: 1.7;
+
+  --text-h4: clamp(1.05rem, 1.7vw, 1.3rem);
+  --text-h4--line-height: 1.3;
+  --text-h4--letter-spacing: -0.01em;
+
+  --text-h3: clamp(1.6rem, 3vw, 2.8rem);
+  --text-h3--line-height: 1.15;
+  --text-h3--letter-spacing: -0.02em;
+
+  --text-h2: clamp(2rem, 4vw, 3.5rem);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.025em;
+
+  --text-display: clamp(2.1rem, 5.4vw, 4.8rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.03em;
+
+  /* Rhythm */
+  --spacing-gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --spacing-section: clamp(4rem, 8vw, 7rem);
+  --container-page: 1400px;
+  --container-measure: 60ch;
+  --container-measure-narrow: 52ch;
 }
 
 @layer base {
@@ -44,13 +100,21 @@
      styles bare h1–h6/p/a elements globally; those rules must stop at
      the portfolio boundary, where layout comes from utilities alone. */
   .portfolio-root {
-    font-family: "IBM Plex Sans", sans-serif;
+    /* Channel triplet, not hex: the card CSS below composes it with an
+       alpha. Sections override it so each band glows its own colour. */
+    --card-accent: 58 130 196;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      system-ui, sans-serif;
     font-size: 1rem;
     line-height: 1.5;
-    color: #08243f;
-    background-color: #fafaf9;
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
+    color: #14141e;
+    background-color: #ffffff;
+    /* DM Sans loads 300/400/500/700 — never fake a weight it lacks. */
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .portfolio-root :is(h1, h2, h3, h4, h5, h6) {
@@ -74,41 +138,138 @@
   }
 
   .portfolio-root ::placeholder {
-    color: #9ca3af;
+    color: #6b6b7a;
     opacity: 1;
+  }
+
+  .portfolio-root ::selection {
+    background-color: rgb(58 130 196 / 0.2);
+    color: #14141e;
+  }
+
+  /* Offsets #anchor targets clear of the portfolio's own fixed header
+     (~89-97px across breakpoints) so a nav click lands the section
+     heading just below the bar instead of underneath it. */
+  .portfolio-root [id] {
+    scroll-margin-top: 7rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .portfolio-root *,
+    .portfolio-root *::before,
+    .portfolio-root *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
 @layer components {
-  .portfolio-root .gradient-text {
-    background-image: linear-gradient(to right, #155a8a, #f97316);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+  /* Cards read the section's own --card-accent, so the glow, the
+     top-edge sweep and the pointer spotlight all pick up the hue of
+     the band they sit in. --mx/--my are fed by useCardSpotlight. */
+  .portfolio-root .card {
+    position: relative;
+    border: 1px solid var(--color-line);
+    background-color: var(--color-surface);
+    transition:
+      transform 0.4s var(--ease-out-expo),
+      box-shadow 0.4s var(--ease-out-expo),
+      border-color 0.3s ease;
   }
 
-  .portfolio-root .card-hover {
-    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  .portfolio-root .card > * {
+    position: relative;
+    z-index: 1;
   }
 
-  .portfolio-root .card-hover:hover {
-    transform: translateY(-0.25rem);
+  .portfolio-root .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: radial-gradient(
+      26rem circle at var(--mx, 50%) var(--my, 0%),
+      rgb(var(--card-accent) / 0.24),
+      transparent 60%
+    );
+  }
+
+  .portfolio-root .card::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    z-index: 2;
+    height: 2px;
+    background: rgb(var(--card-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease-out-expo);
+  }
+
+  .portfolio-root .card:hover {
+    transform: translateY(-5px);
+    border-color: rgb(var(--card-accent) / 0.6);
     box-shadow:
-      0 20px 25px -5px rgb(0 0 0 / 0.1),
-      0 8px 10px -6px rgb(0 0 0 / 0.1);
+      0 22px 46px -12px rgb(var(--card-accent) / 0.55),
+      0 4px 14px -6px rgb(20 20 30 / 0.16);
+  }
+
+  .portfolio-root .card:hover::before {
+    opacity: 1;
+  }
+
+  .portfolio-root .card:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Same interaction, tuned for the dark zone. */
+  .portfolio-root .card-dark {
+    border-color: rgb(255 255 255 / 0.22);
+    background-color: rgb(255 255 255 / 0.07);
+    /* Top inner highlight so the card edge reads against the dark band
+       rather than dissolving into it. */
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.09);
+  }
+
+  .portfolio-root .card-dark:hover {
+    border-color: rgb(var(--card-accent) / 0.7);
+    background-color: rgb(255 255 255 / 0.1);
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.14),
+      0 20px 50px -16px rgb(var(--card-accent) / 0.6);
+  }
+
+  /* Dark hero: three coloured light sources over near-black. */
+  .portfolio-root .wash-hero {
+    background-color: var(--color-night);
+    background-image:
+      radial-gradient(60rem circle at 12% 8%, rgb(240 106 155 / 0.26), transparent 55%),
+      radial-gradient(65rem circle at 88% 22%, rgb(58 130 196 / 0.34), transparent 55%),
+      radial-gradient(45rem circle at 50% 108%, rgb(165 141 232 / 0.22), transparent 60%);
+  }
+
+  /* Crossover from the dark zone into the light one. The mid stops keep
+     the ramp saturated — interpolating plum straight to lavender passes
+     through muted grey and reads as fog rather than as a transition. */
+  .portfolio-root .wash-dawn {
+    background: linear-gradient(
+      180deg,
+      var(--color-night-plum) 0%,
+      #3a2456 26%,
+      #6d4f9e 54%,
+      #b49ce4 78%,
+      var(--color-tint-lavender) 100%
+    );
   }
 }
 
 /* Unlayered on purpose: the main site's global `:focus-visible` orange ring
    is also unlayered, so matching it here is the only way to keep the
-   portfolio on its own (native) focus affordance. */
+   portfolio on its own focus affordance. */
 .portfolio-root :focus-visible {
-  outline: revert;
-  outline-offset: revert;
-}
-
-.portfolio-root :is(input, select, textarea):focus {
-  outline: 2px solid transparent;
+  outline: 2px solid #3a82c4;
   outline-offset: 2px;
 }

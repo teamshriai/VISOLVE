@@ -9,24 +9,27 @@ const groups = [
 
 export default function TechnicalCapabilities() {
   return (
-    <section id="capabilities" className="py-24 px-6 bg-stone-50">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="capabilities"
+      className="bg-gradient-to-b from-tint-pink to-tint-sky py-section px-gutter [--card-accent:240_106_155]"
+    >
+      <div className="max-w-page mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-sm font-semibold text-medical-teal uppercase tracking-widest mb-3">
+          <p className="text-eyebrow uppercase text-accent-deep mb-4">
             Technical Capabilities
-          </h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">The Technology Stack Behind Our Systems</h3>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          </p>
+          <h2 className="text-h2 font-light mb-6">The Technology Stack Behind Our Systems</h2>
+          <p className="text-lead text-ink-soft max-w-measure mx-auto">
             We select technologies for the security, scalability, and performance that complex product and research workloads demand.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {groups.map((g) => (
-            <div key={g.title} className="bg-white/90 rounded-2xl p-6 border border-blue-100 card-hover">
-              <h4 className="font-bold mb-4 text-medical-blue">{g.title}</h4>
+            <div key={g.title} className="card rounded-none p-6">
+              <h3 className="text-eyebrow uppercase text-ink-muted mb-4">{g.title}</h3>
               <div className="flex flex-wrap gap-2">
                 {g.items.map((i) => (
-                  <span key={i} className="text-xs font-medium bg-blue-50 text-slate-700 px-3 py-1.5 rounded-full">
+                  <span key={i} className="text-2xs text-ink-muted border border-line px-2 py-1 rounded-sm">
                     {i}
                   </span>
                 ))}

@@ -12,24 +12,24 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 px-6 bg-medical-dark text-white">
+    <section className="bg-gradient-to-b from-tint-sky to-tint-mist py-section px-gutter [--card-accent:58_130_196]">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-sm font-semibold text-medical-teal uppercase tracking-widest mb-3">
+        <p className="text-eyebrow uppercase text-accent-deep mb-4">
           System Integrity
-        </h2>
-        <h3 className="text-3xl md:text-4xl font-bold mb-4">
+        </p>
+        <h2 className="text-h2 font-light mb-6">
           Reliability Architected into the Core Foundation
-        </h3>
-        <p className="text-gray-300 max-w-2xl mx-auto mb-12">
+        </h2>
+        <p className="text-lead text-ink-soft max-w-measure mx-auto mb-14">
           We apply the rigor needed to deliver dependable systems for ambitious products and research programs.
         </p>
         <div className="grid sm:grid-cols-2 gap-5 text-left">
           {reasons.map((r) => (
-            <div key={r.title} className="flex items-start gap-4 bg-white/5 p-5 rounded-xl border border-white/10">
-              <CheckCircle2 className="text-medical-teal shrink-0 mt-1" size={20} />
+            <div key={r.title} className="card rounded-none flex items-start gap-4 p-5">
+              <CheckCircle2 className="text-accent-deep flex-shrink-0 mt-1" size={18} strokeWidth={1.5} aria-hidden="true" />
               <div>
-                <span className="block text-white font-bold mb-1">{r.title}</span>
-                <span className="block text-sm text-gray-300">{r.desc}</span>
+                <span className="block text-ink font-medium mb-1">{r.title}</span>
+                <span className="block text-sm text-ink-muted">{r.desc}</span>
               </div>
             </div>
           ))}
